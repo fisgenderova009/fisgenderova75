@@ -12,13 +12,12 @@ import az.developia.librarian_Fidan_Isgenderova.request.LibrarianAddRequest;
 public class LibrarianService {
 	@Autowired
 	private ModelMapper mapper;
+
 	@Autowired
-	private LibrarianRepository repository;
+	private LibrarianRepository repository;	
 	public void add(LibrarianAddRequest req) {
 		LibrarianEntity librarian=new LibrarianEntity();
-		mapper.map(req, librarian);
+		mapper.map(req,librarian);
 		repository.save(librarian);
 	}
-	
 }
-

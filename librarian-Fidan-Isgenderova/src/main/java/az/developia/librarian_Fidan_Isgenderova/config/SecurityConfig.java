@@ -44,7 +44,7 @@ public class SecurityConfig {
 		return http.csrf().disable().authorizeRequests()
 
 				.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-				.requestMatchers(HttpMethod.POST, "/users/seller").permitAll().anyRequest().authenticated().and()
+				.requestMatchers(HttpMethod.POST, "/users/librarian").permitAll().anyRequest().authenticated().and()
 				.httpBasic().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.headers().frameOptions().disable().and().build();
 

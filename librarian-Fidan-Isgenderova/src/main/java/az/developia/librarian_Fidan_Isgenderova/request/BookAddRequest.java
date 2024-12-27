@@ -10,11 +10,9 @@ public class BookAddRequest {
 @NotNull(message="Ad mutleqdir")
 @NotBlank(message="Adi bos qoymaq olmaz")
 	private String name;
-	private String author;
-	private String description;
 	@NotNull(message="nesr tarixi mutleqdir")
 	@Past
 	private LocalDate publishedDate;
-	private Double price;
+
 	
 }
