@@ -1,10 +1,12 @@
 package az.developia.librarian_Fidan_Isgenderova.contoller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import az.developia.librarian_Fidan_Isgenderova.exception.MyException;
@@ -18,6 +20,7 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	@PostMapping(path = "/librarian")
+	@ResponseStatus(code=HttpStatus.CREATED)
 	public String addLibrarian(@RequestBody LibrarianAddRequest req,BindingResult br) {
 		if(br.hasErrors()) {
 			throw new MyException("nese oldu",br);
