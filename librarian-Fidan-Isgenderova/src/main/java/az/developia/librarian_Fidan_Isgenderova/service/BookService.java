@@ -33,4 +33,9 @@ public Integer add(BookAddRequest req) {
 	return en.getId();
 	
 }
+
+public void deleteById(Integer id) {
+	repository.deleteById(id);
+	
+}
 }
